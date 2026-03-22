@@ -125,6 +125,29 @@ a {
 }
 
 /* =========================================
+   Disclaimer Banner
+   ========================================= */
+.disclaimer-banner {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  z-index: 2000;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.disclaimer-banner strong {
+  color: var(--text-main);
+}
+
+.disclaimer-banner i {
+  color: var(--pride-orange);
+  margin-right: 0.25rem;
+}
+
+/* =========================================
    Layout Containers
    ========================================= */
 .container {
@@ -275,7 +298,7 @@ a {
    Navbar
    ========================================= */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 1.5rem 0;
@@ -325,10 +348,10 @@ a {
    Hero Section
    ========================================= */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 4rem;
 }
 
 .hero-text {
@@ -608,6 +631,42 @@ a {
 }
 
 /* =========================================
+   Team Section
+   ========================================= */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--text-muted);
+  border: 2px solid var(--border);
+  transition: var(--transition);
+}
+
+.team-member:hover .team-avatar {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text-main);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
    Footer
    ========================================= */
 .footer {
@@ -669,8 +728,13 @@ a {
   h1 { font-size: 2.75rem; }
   h2 { font-size: 2.25rem; }
   .nav-links { display: none; }
-  .hero { padding-top: 8rem; }
+  .hero { padding-top: 4rem; }
   .steps-grid { grid-template-columns: 1fr; }
   .footer-content { grid-template-columns: 1fr; gap: 3rem; }
   .card { padding: 2rem; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
 }
