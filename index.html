@@ -46,13 +46,19 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container hero-container">
-            <div class="hero-text">
-                <div class="tagline"><span></span> You are welcome here.</div>
-                <h1 class="text-gradient">A Safe Space to Explore, Connect, and Grow</h1>
-                <p>Join our supportive LGBTQ+ identity exploration group. A validating and confidential environment where you don't have to navigate your journey alone.</p>
-                <div class="hero-actions">
-                    <a href="#register" class="btn btn-primary btn-large">Begin Your Journey</a>
-                    <a href="#about" class="btn btn-secondary btn-large">Learn More</a>
+            <div class="grid-2 align-center">
+                <div class="hero-text">
+                    <div class="tagline"><span></span> You are welcome here.</div>
+                    <h1 class="text-gradient">A Safe Space to Explore, Connect, and Grow</h1>
+                    <p>Join our supportive LGBTQ+ identity exploration group. A validating and confidential environment where you don't have to navigate your journey alone.</p>
+                    <div class="hero-actions">
+                        <a href="#register" class="btn btn-primary btn-large">Begin Your Journey</a>
+                        <a href="#about" class="btn btn-secondary btn-large">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Diverse group of friends supporting each other" class="hero-image">
+                    <div class="hero-image-glow"></div>
                 </div>
             </div>
         </div>
@@ -65,20 +71,25 @@
                 <h2>About Our Program</h2>
                 <p>Compassionate guidance for your authentic self.</p>
             </div>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="icon-container">
-                        <i class="ph ph-hand-heart icon-large"></i>
-                    </div>
-                    <h3>Validating Environment</h3>
-                    <p>Our counseling program offers an affirming space for individuals navigating their LGBTQ+ identity. Whether you are questioning, coming out, or seeking community, our sessions provide the emotional safety you deserve.</p>
+            <div class="grid-2 align-center">
+                <div class="about-image-wrapper">
+                     <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Counseling support" class="rounded-image">
                 </div>
-                <div class="card">
-                    <div class="icon-container">
-                        <i class="ph ph-users-three icon-large"></i>
+                <div class="about-content">
+                    <div class="card mb-4" style="margin-bottom: 2rem;">
+                        <div class="icon-container">
+                            <i class="ph ph-hand-heart icon-large"></i>
+                        </div>
+                        <h3>Validating Environment</h3>
+                        <p>Our counseling program offers an affirming space for individuals navigating their LGBTQ+ identity. Whether you are questioning, coming out, or seeking community, our sessions provide the emotional safety you deserve.</p>
                     </div>
-                    <h3>Peer Connection</h3>
-                    <p>Connect with others who understand the unique challenges and joys of LGBTQ+ experiences. Share stories, build resilience, and discover the power of a supportive community.</p>
+                    <div class="card">
+                        <div class="icon-container">
+                            <i class="ph ph-users-three icon-large"></i>
+                        </div>
+                        <h3>Peer Connection</h3>
+                        <p>Connect with others who understand the unique challenges and joys of LGBTQ+ experiences. Share stories, build resilience, and discover the power of a supportive community.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,7 +128,7 @@
                 </div>
                 
                 <!-- Eligibility -->
-                <div class="card">
+                <div class="card bg-image">
                     <h2>Who Can Join?</h2>
                     <p>This group specifically supports individuals who:</p>
                     <ul class="feature-list" style="margin-top:2rem;">
@@ -134,6 +145,53 @@
                             <span style="color: var(--text-muted)">Can commit to weekly attendance for the 8-week cycle.</span>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Are the group sessions free?
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, all sessions are completely free of charge for eligible participants. Accessibility to care is one of our primary values.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Do I need to be "out" to join?
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Absolutely not. The group is open to individuals at all stages of their journey, including those who are questioning, entirely closeted, or newly out. You decide what and when to share.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Is this considered group therapy?
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>This is a psychoeducational and supportive environment led by counseling staff. While highly therapeutic, it does not replace individualized clinical therapy. We can provide referrals for 1-on-1 therapy if needed.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What if I miss a session?
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We ask for a commitment to attend all 8 weeks to build trust within the cohort. However, we understand emergencies happen. We just ask you to communicate with the facilitators beforehand if possible.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,79 +329,34 @@
             </div>
             <div class="team-grid">
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cerylle Faith Rodriguez" class="team-avatar-img">
                     <h3>Cerylle Faith Rodriguez</h3>
                 </div>
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Errliza Eugenio" class="team-avatar-img">
                     <h3>Errliza Eugenio</h3>
                 </div>
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maybylen Manlusoc" class="team-avatar-img">
                     <h3>Maybylen Manlusoc</h3>
                 </div>
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Rafael Kavinsky" class="team-avatar-img">
                     <h3>Rafael Kavinsky</h3>
                 </div>
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Risella Antonares" class="team-avatar-img">
                     <h3>Risella Antonares</h3>
                 </div>
                 <div class="card team-member">
-                    <div class="team-avatar"><i class="ph ph-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Vryan James Sarile" class="team-avatar-img">
                     <h3>Vryan James Sarile</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Are the group sessions free?
-                        <i class="ph ph-caret-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Yes, all sessions are completely free of charge for eligible participants. Accessibility to care is one of our primary values.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Do I need to be "out" to join?
-                        <i class="ph ph-caret-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Absolutely not. The group is open to individuals at all stages of their journey, including those who are questioning, entirely closeted, or newly out. You decide what and when to share.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Is this considered group therapy?
-                        <i class="ph ph-caret-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <p>This is a psychoeducational and supportive environment led by counseling staff. While highly therapeutic, it does not replace individualized clinical therapy. We can provide referrals for 1-on-1 therapy if needed.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        What if I miss a session?
-                        <i class="ph ph-caret-down"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <p>We ask for a commitment to attend all 8 weeks to build trust within the cohort. However, we understand emergencies happen. We just ask you to communicate with the facilitators beforehand if possible.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="footer">

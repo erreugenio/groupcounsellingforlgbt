@@ -644,7 +644,7 @@ a {
   padding: 3rem 2rem;
 }
 
-.team-avatar {
+.team-avatar, .team-avatar-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -657,9 +657,11 @@ a {
   color: var(--text-muted);
   border: 2px solid var(--border);
   transition: var(--transition);
+  object-fit: cover;
 }
 
-.team-member:hover .team-avatar {
+.team-member:hover .team-avatar,
+.team-member:hover .team-avatar-img {
   border-color: rgba(255, 255, 255, 0.3);
   color: var(--text-main);
   transform: scale(1.05);
@@ -737,4 +739,93 @@ a {
 
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   Image Helpers & Visual Additions
+   ========================================= */
+.align-center {
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.hero-image-wrapper:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  transition: transform 0.6s ease;
+}
+
+.hero-image-glow {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+.about-image-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+
+.rounded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1/1;
+  transition: transform 0.6s ease;
+}
+
+.about-image-wrapper:hover .rounded-image {
+  transform: scale(1.05);
+}
+
+.card.bg-image {
+  position: relative;
+  z-index: 1;
+}
+
+.card.bg-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+  border-radius: var(--radius-lg);
+  transition: opacity 0.4s ease;
+}
+
+.card.bg-image:hover::after {
+  opacity: 0.2;
 }
