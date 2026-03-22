@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Sticky Navbar
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // 2. FAQ Accordion
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -23,10 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle active state
             const isActive = header.classList.contains('active');
             
-            // Close all other accordions (Optional, for auto-collapse behavior)
+            // Close all other accordions
             document.querySelectorAll('.accordion-header').forEach(otherHeader => {
                 otherHeader.classList.remove('active');
-                otherHeader.parentElement.querySelector('.accordion-content').style.maxHeight = null;
+                if (otherHeader.parentElement && otherHeader.parentElement.querySelector('.accordion-content')) {
+                    otherHeader.parentElement.querySelector('.accordion-content').style.maxHeight = null;
+                }
             });
             
             // If it wasn't active, open it
@@ -39,52 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Form Submission Handling
     const form = document.getElementById('groupRegistrationForm');
-    const formWrapper = document.querySelector('.registration-form-wrapper');
     const successMessage = document.getElementById('formSuccessMessage');
-    const formIntro = document.querySelector('.form-intro');
-    const formHeading = formWrapper.querySelector('h2');
-
-    if (form) {
+    
+    if (form && successMessage) {
         form.addEventListener('submit', (e) => {
             e.preventDefault(); // Prevent page reload
             
-            // Optional: You can collect FormData here if needed for an API call
-            // const formData = new FormData(form);
-            // const data = Object.fromEntries(formData);
-            // console.log('Form Submitted securely:', data);
+            // Hide the form securely via display property
+            form.style.display = 'none';
             
-            // UI Transition
-            // Hide the form slowly
-            form.style.opacity = '0';
-            form.style.transition = 'opacity 0.4s ease';
+            const formIntro = document.querySelector('.form-intro');
+            if (formIntro) formIntro.style.display = 'none';
             
-            if (formIntro) {
-                formIntro.style.opacity = '0';
-                formIntro.style.transition = 'opacity 0.4s ease';
-            }
-            if (formHeading) {
-                formHeading.style.opacity = '0';
-                formHeading.style.transition = 'opacity 0.4s ease';
-            }
-
-            setTimeout(() => {
-                form.classList.add('hidden');
-                if (formIntro) formIntro.classList.add('hidden');
-                if (formHeading) formHeading.classList.add('hidden');
-
-                // Show success message
-                successMessage.classList.remove('hidden');
-                successMessage.style.opacity = '0';
-                successMessage.style.transition = 'opacity 0.5s ease';
-                successMessage.style.transform = 'translateY(10px)';
+            const formWrapper = document.querySelector('.registration-form-wrapper');
+            if (formWrapper) {
+                const formHeading = formWrapper.querySelector('h2');
+                if (formHeading) formHeading.style.display = 'none';
                 
-                // Trigger reflow to apply transition
-                void successMessage.offsetWidth;
-                
-                successMessage.style.opacity = '1';
-                successMessage.style.transform = 'translateY(0)';
+                // Set the min-height of the form wrapper so the block doesn't snap abruptly
+                formWrapper.style.minHeight = '300px';
+                formWrapper.style.display = 'flex';
+                formWrapper.style.flexDirection = 'column';
+                formWrapper.style.justifyContent = 'center';
+            }
 
-            }, 400); // match transition time
+            // Immediately show success message to fix the bug where transitions fail to trigger for visitors
+            successMessage.classList.remove('hidden');
+            successMessage.style.display = 'block';
+            successMessage.style.opacity = '1';
         });
     }
 });
